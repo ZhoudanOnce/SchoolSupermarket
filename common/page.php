@@ -1,0 +1,115 @@
+<?php
+if ($page*1>$list["page"]*1){
+	$page = $list["page"];
+}
+if($_REQUEST["pid"]){$condition0="&pid=".$_REQUEST["pid"];}
+if ($_REQUEST["categoryid"]){$condition1="&categoryid=".$_REQUEST["categoryid"];}
+if($_REQUEST["title"]){$condition2="&title=".$_REQUEST["title"];}
+if($_REQUEST["username"]){$condition3="&username=".$_REQUEST["username"];}
+if($_REQUEST["s1"]){$condition4="&s1=".$_REQUEST["s1"];}
+if($_REQUEST["s2"]){$condition5="&s2=".$_REQUEST["s2"];}
+if($_REQUEST["uname"]){$condition6="&uname=".$_REQUEST["uname"];}
+if($_REQUEST["nickname"]){$condition7="&nickname=".$_REQUEST["nickname"];}
+if($_REQUEST["status"]){$condition8="&status=".$_REQUEST["status"];}
+if($_REQUEST["account"]){$condition9="&account=".$_REQUEST["account"];}		
+if($_REQUEST["number1"]){$condition10="&number1=".$_REQUEST["number1"];}				
+if($_REQUEST["keywords"]){$condition11="&keywords=".$_REQUEST["keywords"];}
+if($_REQUEST["zname"]){$condition12="&zname=".$_REQUEST["zname"];}
+if($_REQUEST["semesterid"]){$condition13="&semesterid=".$_REQUEST["semesterid"];}
+if($_REQUEST["type"]){$condition14="&type=".$_REQUEST["type"];}
+if($_REQUEST["s3"]){$condition15="&s3=".$_REQUEST["s3"];}
+if($_REQUEST["s4"]){$condition16="&s4=".$_REQUEST["s4"];}
+if($_REQUEST["content"]){$condition17="&content=".$_REQUEST["content"];}
+if($_REQUEST["categoryid"]){$condition18="&categoryid=".$_REQUEST["categoryid"];}
+if($_REQUEST["category1id"]){$condition19="&category1id=".$_REQUEST["category1id"];}
+if($_REQUEST["isnice"]){$condition20="&isnice=".$_REQUEST["isnice"];}
+if($_REQUEST["userid"]){$condition21="&userid=".$_REQUEST["userid"];}
+if($_REQUEST["shenfen"]){$condition22="&shenfen=".$_REQUEST["shenfen"];}
+if($_REQUEST["tel"]){$condition23="&tel=".$_REQUEST["tel"];}
+if($_REQUEST["id"]){$condition24="&id=".$_REQUEST["id"];}
+if($_REQUEST["zhigongid"]){$condition25="&zhigongid=".$_REQUEST["zhigongid"];}
+if($_REQUEST["goodsid"]){$condition26="&goodsid=".$_REQUEST["goodsid"];}
+if($_REQUEST["content1id"]){$condition27="&content1id=".$_REQUEST["content1id"];}
+if($_REQUEST["status1"]){$condition28="&status1=".$_REQUEST["status1"];}
+if($_REQUEST["sorts2id"]){$condition29="&sorts2id=".$_REQUEST["sorts2id"];}
+if($_REQUEST["ordersid"]){$condition30="&ordersid=".$_REQUEST["ordersid"];}
+if($_REQUEST["categoryid2"]){$condition31="&categoryid2=".$_REQUEST["categoryid2"];}
+if($_REQUEST["huxing"]){$condition32="&huxing=".$_REQUEST["huxing"];}
+if($_REQUEST["zhuangxiu"]){$condition33="&zhuangxiu=".$_REQUEST["zhuangxiu"];}
+if($_REQUEST["addressid"]){$condition34="&addressid=".$_REQUEST["addressid"];}
+if($_REQUEST["news1id"]){$condition35="&news1id=".$_REQUEST["news1id"];}
+if($_REQUEST["sortsid"]){$condition36="&sortsid=".$_REQUEST["sortsid"];}
+if($_REQUEST["zt"]){$condition37="&zt=".$_REQUEST["zt"];}
+if($_REQUEST["begintime"]){$condition38="&begintime=".$_REQUEST["begintime"];}
+if($_REQUEST["endtime"]){$condition39="&endtime=".$_REQUEST["endtime"];}
+if($_REQUEST["classifyid"]){$condition40="&classifyid=".$_REQUEST["classifyid"];}
+
+$condition = $condition0.$condition1.$condition2.$condition3.$condition4.$condition5.$condition6.$condition7.$condition8.$condition9.$condition10.$condition11.$condition12.$condition13.$condition14.$condition15.$condition16.$condition17.$condition18.$condition19.$condition20.$condition21.$condition22.$condition23.$condition24.$condition25.$condition26.$condition27.$condition28.$condition29.$condition30.$condition31.$condition32.$condition33.$condition34.$condition35.$condition36.$condition37.$condition38.$condition39.$condition40;
+$Page = new PageWeb($list["total"],$list["page_size"], $condition, $page);
+$page_show = $Page->show(); 
+if($_REQUEST["chk"]=="ok"){
+		
+		if($_REQUEST["sel_do"]=="db_seldelup"){
+			$mysql->db_seldelup($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="删除"){
+			$mysql->db_seldel($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="db_isno0"){
+			$mysql->db_isno0($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="禁用"){
+			$mysql->db_jin($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="delcontent1"){
+			$mysql->delcontent1($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="delcategory"){
+			$mysql->delcategory($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="delcategory1"){
+			$mysql->delcategory1($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="deluser"){
+			$mysql->deluser($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="delgoods"){
+			$mysql->delgoods($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="delzhigong"){
+			$mysql->delzhigong($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="恢复"){
+			$mysql->db_hui($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="istop1"){
+			$mysql->istop1($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="isnice1"){
+			$mysql->isnice1($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="istop0"){
+			$mysql->istop0($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="isnice0"){
+			$mysql->isnice0($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="delbbs"){
+			$mysql->delbbs($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="delbbs1"){
+			$mysql->delbbs1($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="delbbs1"){
+			$mysql->isnouser($tb_name,$_REQUEST["sel_id"]);
+		}
+		elseif($_REQUEST["sel_do"]=="delbbs1"){
+			$mysql->isnouserg($tb_name,$_REQUEST["sel_id"]);
+		}
+		else{
+			$mysql->db_cstatus($tb_name,$_REQUEST["sel_id"],$_REQUEST["sel_do"]);
+		}
+		if($_REQUEST["sel_do"]=="delbbs1"){urlMsg("操作成功", $tb_name."_list1.php?".$condition);}else{urlMsg("操作成功", $tb_name."_list.php?".$condition);}
+	}
+
+?>
